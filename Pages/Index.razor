@@ -1,0 +1,20 @@
+@page "/"
+
+<h1>@message</h1>
+
+<button class="btn btn-primary" @onclick="ToggleMessage">Toggle Message</button>
+
+@if (showExtraMessage)
+{
+    <p>This is an additional message!</p>
+}
+
+@code {
+    private string message = "Hello, World!";
+    private bool showExtraMessage = false;
+
+    private void ToggleMessage()
+    {
+        showExtraMessage = !showExtraMessage;
+    }
+}
